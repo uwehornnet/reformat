@@ -1,12 +1,3 @@
-const express = require("express");
-const xlsx = require("xlsx");
-const axios = require("axios").default;
-const fs = require("fs");
-
-const app = express();
-const port = 3000;
-
-const filename = "output.xlsx";
 const source = [
 	[
 		"Date",
@@ -369,74 +360,6 @@ const source = [
 		100.0,
 	],
 ];
-
-const convertToXlsx = async (data) => {
-	let Headers = data[0];
-	let Data = data.slice(1);
-
-	let workbook = xlsx.utils.book_new();
-	let worksheet = xlsx.utils.aoa_to_sheet([]);
-
-	xlsx.utils.book_append_sheet(workbook, worksheet);
-
-	xlsx.utils.sheet_add_aoa(worksheet, [Headers], { origin: "A1" });
-	Data.forEach((row, index) => {
-		xlsx.utils.sheet_add_aoa(worksheet, [row], { origin: `A${index + 2}` });
-	});
-
-	return xlsx;
-};
-
-const convertToJson = async (data) => {
-	try {
-		const header = data[0];
-		const body = data.slice(1);
-		const response = body.map((row) => {
-			return row.reduce((acc, curr, index) => {
-				acc[header[index]] = curr;
-				return acc;
-			}, {});
-		});
-
-		return response;
-	} catch (error) {
-		console.log(error);
-	}
-};
-
-app.get("/test", (req, res) => {
-	try {
-		return res.status(400).json(source);
-	} catch (err) {
-		console.log(err);
-	}
-});
-
-app.get("/", async (req, res) => {
-	try {
-		if (!req.query.endpoint) {
-			res.status(400).json({
-				error: "endpoint is required",
-			});
-			return;
-		}
-		const data = await axios.get(req.query.endpoint);
-
-		if (req.query.download) {
-			const response = await convertToXlsx(data.data);
-			const file = xlsx.writeFile(response, filename);
-			res.download(file);
-			return;
-		}
-
-		const response = await convertToJson(data.data);
-		res.status(400).json(response);
-	} catch (error) {
-		console.log(error);
-		res.status(500).send(error);
-	}
-});
-
-app.listen(port, () => {
-	console.log(`Listening on port ${port}`);
-});
+export default function handler(req, res) {
+	res.status(200).json(source);
+}

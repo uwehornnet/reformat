@@ -1,12 +1,21 @@
 {
-	"name": "rewrite",
-	"version": "1.0.0",
-	"main": "index.js",
-	"license": "MIT",
-	"entry": "index.js",
-	"dependencies": {
-		"axios": "^0.27.2",
-		"express": "^4.18.1",
-		"xlsx": "^0.18.5"
-	}
+  "name": "rewrite",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "12.2.3",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "eslint": "8.21.0",
+    "eslint-config-next": "12.2.3"
+  }
 }
