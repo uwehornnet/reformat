@@ -16,27 +16,15 @@ export default function Home() {
 					Get started by adding <code className={styles.code}>/api?endpoint=##your-url##</code> to your url.
 					<br />
 					Make sure to replace <code className={styles.code}>##your-url##</code> with the url you want to
-					convert.
-				</p>
-
-				<p className={styles.description}>
-					You can generate an .xlsx file by adding <code className={styles.code}>&download</code> at the and
-					of the url.
+					convert. You can generate an .xlsx file by adding <code className={styles.code}>&download</code> at
+					the and of the url. your url should then look something like this:{" "}
+					<a href="https://reformat.vercel.app/api/?endpoint=https://reformat.vercel.app/api/url&download">
+						<code className={styles.code}>
+							https://reformat.vercel.app/api?endpoint=https://reformat.vercel.app/api/url&download
+						</code>
+					</a>
 				</p>
 			</main>
-
-			<footer className={styles.footer}>
-				<a
-					href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					Powered by{" "}
-					<span className={styles.logo}>
-						<Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-					</span>
-				</a>
-			</footer>
 		</div>
 	);
 }
