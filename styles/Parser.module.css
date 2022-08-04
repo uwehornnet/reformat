@@ -1,0 +1,51 @@
+.container {
+	padding: 0 2rem;
+}
+
+.main {
+	min-height: 100vh;
+	padding: 1rem 0;
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+}
+
+.sticky {
+	position: sticky;
+	top: 0;
+	background: black;
+	width: 100%;
+	padding: 1rem 0;
+}
+
+.input {
+	display: block;
+	width: 100%;
+	font-size: 1rem;
+	font-family: monospace;
+	padding: 1rem;
+	outline: none;
+	border: none;
+	background-color: white;
+	border-radius: 8px;
+}
+
+.highlighter {
+	display: block;
+	width: 100%;
+	flex: 1;
+	border-radius: 8px;
+	line-height: 1.6;
+	font-size: 1rem;
+}
+
+@media (max-width: 600px) {
+}
+
+@media (prefers-color-scheme: dark) {
+	.input {
+		background-color: rgb(1, 22, 39);
+	}
+}
