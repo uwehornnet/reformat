@@ -20,6 +20,11 @@ export default function Home() {
 					Make sure to replace <code className={styles.code}>##your-url##</code> with the url you want to
 					convert.
 				</p>
+
+				<p className={styles.description}>
+					You can generate an .xlsx file by adding <code className={styles.code}>&download</code> at the and
+					of the url.
+				</p>
 			</main>
 
 			<footer className={styles.footer}>
