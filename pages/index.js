@@ -16,11 +16,11 @@ export default function Home() {
 					Get started by adding <code className={styles.code}>/api?endpoint=##your-url##</code> to your url.
 					<br />
 					Make sure to replace <code className={styles.code}>##your-url##</code> with the url you want to get
-					your data from. By adding <code className={styles.code}>&download</code> at the and of the url, you
-					can generate a .xlsx download. Your url should now look something like this:{" "}
-					<a href="https://reformat.vercel.app/api/?endpoint=https://reformat.vercel.app/api/url&download">
+					your data from. By adding <code className={styles.code}>&download=true</code> at the and of the url,
+					you can generate a .xlsx download. Your url should now look something like this:{" "}
+					<a href="https://reformat.vercel.app/api/?endpoint=https://reformat.vercel.app/api/url&download=true">
 						<code className={styles.code}>
-							https://reformat.vercel.app/api?endpoint=https://reformat.vercel.app/api/url&download
+							https://reformat.vercel.app/api?endpoint=https://reformat.vercel.app/api/url&download=true
 						</code>
 					</a>
 				</p>
