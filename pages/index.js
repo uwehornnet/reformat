@@ -12,8 +12,6 @@ export default function Home() {
 			</Head>
 
 			<main className={styles.main}>
-				<h1 className={styles.title}>Welcome to ReFormat</h1>
-
 				<p className={styles.description}>
 					Get started by adding <code className={styles.code}>/api?endpoint=##your-url##</code> to your url.
 					<br />
