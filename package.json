@@ -1,0 +1,12 @@
+{
+	"name": "rewrite",
+	"version": "1.0.0",
+	"main": "index.js",
+	"license": "MIT",
+	"entry": "index.js",
+	"dependencies": {
+		"axios": "^0.27.2",
+		"express": "^4.18.1",
+		"xlsx": "^0.18.5"
+	}
+}
